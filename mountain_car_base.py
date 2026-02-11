@@ -47,7 +47,7 @@ def build_custom_p_matrix(env, n_bins, pos_bins, vel_bins):
 
                 next_obs, reward, terminated, truncated, _ = env.step(a)  # новий стан після кроку з поточною дією
 
-                next_s_idx = get_state_index(next_obs, n_bins, pos_bins, vel_bins, ) # дискретний індекс нового стану
+                next_s_idx = get_state_index(next_obs, n_bins, pos_bins, vel_bins) # дискретний індекс нового стану
 
                 # винагорода на основі позиції і напрямку швидкості
                 r = calculate_custom_reward(reward, curr_pos, curr_vel, a, next_obs[0], next_obs[1])

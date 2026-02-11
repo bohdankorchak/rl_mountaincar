@@ -6,7 +6,7 @@ from mountain_car_base import build_custom_p_matrix, test
 
 def compute_value_function(policy, P, num_states, gamma=0.99, threshold=1e-20):
     value_table = np.zeros(num_states)
-    for i in range(1000):
+    for i in range(5000):
         updated_value_table = np.copy(value_table)
         for s in range(num_states):
             a = int(policy[s])
@@ -35,7 +35,6 @@ def policy_iteration(P, num_states, gamma=0.99):
         new_policy = extract_policy(value_function, P, num_states, gamma)
 
         if np.all(policy == new_policy):
-            print(i)
             break
         policy = new_policy
 

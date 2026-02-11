@@ -4,7 +4,7 @@ import numpy as np
 from mountain_car_base import build_custom_p_matrix, test
 
 
-def value_iteration(env, P, num_states, num_iterations=1000, gamma=0.99, threshold=1e-20):
+def value_iteration(env, P, num_states, num_iterations=5000, gamma=0.99, threshold=1e-20):
     value_table = np.zeros(num_states)
 
     for i in range(num_iterations):
